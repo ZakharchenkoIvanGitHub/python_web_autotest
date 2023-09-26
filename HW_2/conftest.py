@@ -33,7 +33,7 @@ def selector_blog():
 
 @pytest.fixture()
 def selector_create():
-    return """//*[@id="create-btn"]"""
+    return """//button[@id="create-btn"]"""
 
 
 @pytest.fixture()

@@ -54,7 +54,6 @@ def test_step4_hw(site, selector_input_login, selector_input_password, selector_
                   selector_title_create,
                   selector_description_create, selector_content_create, selector_title_public,
                   selector_content_public):
-
     input1 = site.find_element_wait_located("xpath", selector_input_login)
     input1.clear()
     input1.send_keys(testdata['login'])
