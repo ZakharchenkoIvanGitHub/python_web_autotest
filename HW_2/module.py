@@ -1,9 +1,10 @@
-
 import yaml
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
@@ -19,8 +20,8 @@ class Site:
             options = webdriver.FirefoxOptions()
             self.driver = webdriver.Firefox(service=service, options=options)
         elif browser == "chrome":
-           # service = Service(executable_path=ChromeDriverManager().install())
-            service = Service(testdata["driver_path"])
+            service = Service(executable_path=ChromeDriverManager().install())
+            # service = Service(testdata["driver_path"])
             options = webdriver.ChromeOptions()
             self.driver = webdriver.Chrome(service=service, options=options)
 
@@ -34,6 +35,26 @@ class Site:
             element = self.driver.find_element(By.CSS_SELECTOR, path)
         elif mode == "xpath":
             element = self.driver.find_element(By.XPATH, path)
+        else:
+            element = None
+        return element
+
+    def find_element_wait_located(self, mode, path):
+        wait = WebDriverWait(self.driver, 10)
+        if mode == "css":
+            element = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, path)))
+        elif mode == "xpath":
+            element = wait.until(EC.presence_of_element_located((By.XPATH, path)))
+        else:
+            element = None
+        return element
+
+    def find_element_wait_clickable(self, mode, path):
+        wait = WebDriverWait(self.driver, 10)
+        if mode == "css":
+            element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, path)))
+        elif mode == "xpath":
+            element = wait.until(EC.element_to_be_clickable((By.XPATH, path)))
         else:
             element = None
         return element
