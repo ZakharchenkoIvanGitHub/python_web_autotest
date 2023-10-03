@@ -18,5 +18,6 @@ class BasePage:
     def go_to_site(self):
         return self.driver.get(self.base_url)
 
-    def get_alert(self):
-        return self.driver.switch_to.alert
+    def get_alert(self, time=10):
+        return WebDriverWait(self.driver, time).until(EC.alert_is_present(),
+                                                      message=f"alert не найден ")

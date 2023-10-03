@@ -41,5 +41,4 @@ def test_step3(browser):
     test_page.enter_email("sqasasa@sedswd.ru")
     test_page.enter_content("ddasdasdsdewerfw4erewrerwe")
     test_page.click_button_contact_as()
-    time.sleep(1)
     assert test_page.go_alert() == 'Form successfully submitted'
