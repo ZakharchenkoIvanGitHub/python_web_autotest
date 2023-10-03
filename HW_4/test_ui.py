@@ -9,7 +9,7 @@ with open("testdata.yaml") as f:
 
 
 def test_step1(browser):
-    logging.info("Test1 Starting")
+    logging.info("Test_ui_1 Starting")
     test_page = OperationsHelper(browser)
     test_page.go_to_site()
     test_page.enter_login("test")
@@ -20,7 +20,7 @@ def test_step1(browser):
 
 
 def test_step2(browser):
-    logging.info("Test2 Starting")
+    logging.info("Test_ui_2 Starting")
     test_page = OperationsHelper(browser)
     test_page.go_to_site()
     test_page.enter_login(testdata["login"])
@@ -31,7 +31,7 @@ def test_step2(browser):
 
 
 def test_step3(browser):
-    logging.info("Test3 Starting")
+    logging.info("Test_ui_3 Starting")
     test_page = OperationsHelper(browser)
     test_page.go_to_site()
     test_page.enter_login(testdata["login"])

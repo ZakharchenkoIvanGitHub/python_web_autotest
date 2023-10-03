@@ -37,7 +37,7 @@ class BasePage:
     def get_alert(self, time=10):
         try:
             alert = WebDriverWait(self.driver, time).until(EC.alert_is_present(),
-                                                         message=f"alert не найден ")
+                                                           message=f"alert не найден ")
             return alert
         except:
             logging.exception("Exception with alert")

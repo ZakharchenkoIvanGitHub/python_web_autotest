@@ -9,3 +9,7 @@ url_posts: https://test-stand.gb.ru/api/posts
 title: title_test_post
 description: description_test_post
 content: content_test_post
+find_id: 81506
+mail_password: XJhDxzzNV5iVxqda32C2
+fromaddr_report: ivan.zakharchenko.test@mail.ru
+toaddr_report: zakharka2000@ya.ru

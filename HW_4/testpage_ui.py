@@ -12,6 +12,7 @@ class TestSearchLocators:
     for locator in locators["xpath"].keys():
         ids[locator] = (By.XPATH, locators["xpath"][locator])
 
+
 #    for locator in locators["css"].keys():
 #        ids[locator] = (By.CSS_SELECTOR, locators["css"][locator])
 
