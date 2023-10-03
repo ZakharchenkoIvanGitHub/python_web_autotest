@@ -66,7 +66,7 @@ class OperationsHelper(BasePage):
 
     def go_alert(self):
         logging.info("Go_alert")
-        alert = self.driver.switch_to.alert
+        alert = self.get_alert()
         text = alert.text
         logging.info(f"Alert text '{text}'")
         alert.accept()
