@@ -17,6 +17,8 @@ class TestSearchLocators:
     LOCATOR_CONTENT_PUBLIC = (By.XPATH, """//div[@class = 'content svelte-tv8alb']""")
     LOCATOR_INPUT_FILE = (By.XPATH, """// input[ @type = 'file']""")
     LOCATOR_CONTACT = (By.XPATH, """// a[text() = 'Contact']""")
+    LOCATOR_DESCRIPTION_NAME = (By.XPATH, """// span[text() = 'Your name'] // following::input[1]""")
+    LOCATOR_DESCRIPTION_EMAIL = (By.XPATH, """// span[text() = 'Your email'] // following::input[1]""")
 
 
 class OperationsHelper(BasePage):
@@ -29,6 +31,24 @@ class OperationsHelper(BasePage):
     def enter_pass(self, word):
         logging.info(f"Send {word} to element {TestSearchLocators.LOCATOR_INPUT_PASSWORD[1]}")
         login_field = self.find_element(TestSearchLocators.LOCATOR_INPUT_PASSWORD)
+        login_field.clear()
+        login_field.send_keys(word)
+
+    def enter_name(self, word):
+        logging.info(f"Send {word} to element {TestSearchLocators.LOCATOR_DESCRIPTION_NAME[1]}")
+        login_field = self.find_element(TestSearchLocators.LOCATOR_DESCRIPTION_NAME)
+        login_field.clear()
+        login_field.send_keys(word)
+
+    def enter_email(self, word):
+        logging.info(f"Send {word} to element {TestSearchLocators.LOCATOR_DESCRIPTION_EMAIL[1]}")
+        login_field = self.find_element(TestSearchLocators.LOCATOR_DESCRIPTION_EMAIL)
+        login_field.clear()
+        login_field.send_keys(word)
+
+    def enter_content(self, word):
+        logging.info(f"Send {word} to element {TestSearchLocators.LOCATOR_CONTENT_CREATE[1]}")
+        login_field = self.find_element(TestSearchLocators.LOCATOR_CONTENT_CREATE)
         login_field.clear()
         login_field.send_keys(word)
 
