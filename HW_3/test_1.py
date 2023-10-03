@@ -8,7 +8,7 @@ with open("testdata.yaml") as f:
     testdata = yaml.safe_load(f)
 
 
-#def test_step1(browser):
+# def test_step1(browser):
 #    logging.info("Test1 Starting")
 #    test_page = OperationsHelper(browser)
 #    test_page.go_to_site()
@@ -19,7 +19,7 @@ with open("testdata.yaml") as f:
 #    assert test_page.get_error_text() == "401"
 #
 #
-#def test_step2(browser):
+# def test_step2(browser):
 #    logging.info("Test2 Starting")
 #    test_page = OperationsHelper(browser)
 #    test_page.go_to_site()

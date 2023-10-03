@@ -16,7 +16,7 @@ class TestSearchLocators:
     LOCATOR_TITLE_PUBLIC = (By.XPATH, """//h1[@class ='svelte-tv8alb']""")
     LOCATOR_CONTENT_PUBLIC = (By.XPATH, """//div[@class = 'content svelte-tv8alb']""")
     LOCATOR_INPUT_FILE = (By.XPATH, """// input[ @type = 'file']""")
-    LOCATOR_CONTACT = (By.XPATH,"""// a[text() = 'Contact']""")
+    LOCATOR_CONTACT = (By.XPATH, """// a[text() = 'Contact']""")
 
 
 class OperationsHelper(BasePage):
@@ -71,4 +71,3 @@ class OperationsHelper(BasePage):
         logging.info(f"Alert text '{text}'")
         alert.accept()
         return text
-
