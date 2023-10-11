@@ -4,7 +4,7 @@ from testpage_ui import OperationsHelper
 import logging
 import yaml
 
-with open("testdata.yaml") as f:
+with open("config.yaml") as f:
     testdata = yaml.safe_load(f)
 
 

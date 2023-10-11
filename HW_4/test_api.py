@@ -4,7 +4,7 @@ import yaml
 
 from testpage_api import get_data_posts, test_create_post
 
-with open("testdata.yaml") as f:
+with open("config.yaml") as f:
     data = yaml.safe_load(f)
 
 
